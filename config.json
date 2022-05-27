@@ -1,0 +1,27 @@
+{
+  "default_prefix" : "=",
+  "color":"#FF0000",
+ "owner" :  ["840565926423298079","445531846118211588","824911769008472065","906588285336424449","793726345393340466","748397252682317905"],
+ "playlistLimit":100,
+ "DB": "mongodb+srv://SpaceMusic:shivamop@cluster0.kgvij.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+"log":  "944221824236007507", 
+"spotifyToken" : "BQCisNxjclbEaLVoNpI4VXI0PasVkYh7SuTmuIkucjhgl81U2g3UtWxYnHrFaMwFq0BSYJXu4FdmtRHhnng5GQQdX2UW47k1TqLVWBa_gRThko_-9pd0-TNqls_sFwGvr7lyRxMAINoO-Bsip1urhAz3leMrxnvVOMdjNRV6PrfQR-6AVMeZ4uM",
+"spotifyID" : "f65c6cc650044020a923a266ab4e6479",
+"spotifySecret": "6e761d0fd8c1408bba85191e60c9ce26",
+"nodes":[
+    
+    
+    {
+     "host": "losingtime.dpaste.org" ,
+        "port": 2124,
+        "password": "SleepingOnTrains",
+        "secure": false
+    
+      
+      
+    }
+      
+    ]
+  
+  }
+

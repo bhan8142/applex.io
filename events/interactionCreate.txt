@@ -1,0 +1,211 @@
+const discord = require("discord.js");
+module.exports = {
+  name: "interactionCreate",
+  async execute(client,interaction) {
+
+
+if(interaction.isSelectMenu()){
+
+		const row = new discord.MessageActionRow().addComponents(
+			new discord.MessageSelectMenu()
+				.setCustomId('select')
+				.setPlaceholder('Select Catagory')
+				.setMinValues(1)
+				.setMaxValues(1)
+				.addOptions([
+					{
+						label: 'Music'
+						,
+						description: 'Click here for Music commands',
+						value:'music',
+						emoji: '<a:applemusic:939766763925671966>'
+					},
+					{
+						label: 'playlist',
+						description: 'Customize your music with advanced commands',
+						emoji: "<:apple_playlist:939768124893458453>",
+						value: 'playlist'
+					},
+					{
+						label: 'filters',
+						description: "Select from a wide range of filters and enjoy the music!",
+						value: 'filters',
+						emoji: "<a:MFA_Stars:939769015436468274>"
+					},
+					{
+						label: 'Miscellaneous',
+						description: "info!",
+						value: 'admin',
+						emoji: ":smirk:"
+					},
+				{
+						label: 'Utility',
+						description: `To get information about ${client.user.username}`,
+						emoji: "<:Melody_utility:891685118983438387>",
+						value: 'utility'
+					},
+						
+					
+						
+				])
+		);
+
+let prefix =client.config.default_prefix
+
+let music = new discord.MessageEmbed()
+
+.setAuthor(`Music`,client.user.displayAvatarURL())
+.setColor('ff0000')
+.setDescription(`
+<a:arrow:939771431837921280> To get help for a specific command use ${prefix}help <commandname>
+
+<a:Alex_Playing:927081761819742248> ____**Music**____
+**${prefix} clear
+  ${prefix} join
+  ${prefix} leave
+  ${prefix} loop
+  ${prefix} move
+  ${prefix} nowplaying
+  ${prefix} pause
+  ${prefix} play
+  ${prefix} previous
+  ${prefix} queue
+  ${prefix} remove
+  ${prefix} resume
+  ${prefix} search
+  ${prefix} skip
+  ${prefix} seek
+  ${prefix} stop
+  ${prefix} volume**
+  [Support Server](https://discord.gg/cqEuckdXYw) ● [Invite Me](https://discord.com/api/oauth2/authorize?client_id=898239884865728512&permissions=2209737024&scope=bot)
+
+`);
+
+let dj = new discord.MessageEmbed()
+
+.setAuthor(`Playlist`,client.user.displayAvatarURL())
+.setColor('ff0000')
+.setDescription(`
+<a:arrow:939771431837921280> To get help for a specific command use ${prefix}help <commandname>
+
+<:apple_playlist:939768124893458453> ____**Playlist**____
+**${prefix} pl-create
+  ${prefix} pl-add
+  ${prefix} pl-remove
+  ${prefix} pl-show
+  ${prefix} pl-list
+  ${prefix} pl-savecurrent**
+  [Support Server](https://discord.gg/cqEuckdXYw) ● [Invite Me](https://discord.com/api/oauth2/authorize?client_id=898239884865728512&permissions=2209737024&scope=bot)
+
+`);
+
+
+ let filters = new discord.MessageEmbed()
+
+.setAuthor(`Filters`,client.user.displayAvatarURL())
+.setColor('ff0000')
+.setDescription(`
+<a:arrow:939771431837921280> To get help for a specific command use ${prefix}help <commandname>
+
+<a:MFA_Stars:939769015436468274> ____**FILTERS**____
+**${prefix} bassboost
+  ${prefix} bass
+  ${prefix} deepbass
+  ${prefix} nightcore
+  ${prefix} funny
+  ${prefix} pop
+  ${prefix} speed
+  ${prefix} vaporwave
+  ${prefix} soft**
+  [Support Server](https://discord.gg/cqEuckdXYw) ● [Invite Me](https://discord.com/api/oauth2/authorize?client_id=898239884865728512&permissions=2209737024&scope=bot)
+
+`);
+
+
+
+let utility = new discord.MessageEmbed()
+
+.setAuthor(`Utility`,client.user.displayAvatarURL()) 
+.setColor('ff0000')
+.setDescription(`
+<a:arrow:939771431837921280> To get help for a specific command use ${prefix}help <commandname>
+
+<a:SETTINGS:898866314599346196> ____**Utlity**____
+**${prefix} about
+  ${prefix} help
+  ${prefix} invite
+  ${prefix} ping
+  ${prefix} uptime
+  ${prefix} Vote**
+[Support Server](https://discord.gg/cqEuckdXYw) ● [Invite Me](https://discord.com/api/oauth2/authorize?client_id=898239884865728512&permissions=2209737024&scope=bot)
+`);
+
+
+let admin = new discord.MessageEmbed()
+
+.setAuthor(`Miscellaneous`,client.user.displayAvatarURL()) 
+.setColor('ff0000')
+.setDescription(`
+<a:arrow:939771431837921280> To get help for a specific command use ${prefix}help <commandname>
+
+<:moderation:939772660995485726>__**Miscellaneous**__ :
+**${prefix} prefix 
+  ${prefix} settc 
+  ${prefix} vote
+  ${prefix} report**
+[Support Server](https://discord.gg/cqEuckdXYw) ● [Invite Me](https://discord.com/api/oauth2/authorize?client_id=898239884865728512&permissions=2209737024&scope=bot)
+`);
+ if(interaction.values[0] == "music"){
+      
+    
+return interaction.update({embeds : [music]})
+      
+      
+  } else if(interaction.values[0] == "dj"){
+      
+    
+return interaction.update({embeds : [dj]})
+      
+      
+  }  else if(interaction.values[0] == "filters"){
+      
+    
+return interaction.update({embeds : [filters]})
+ 
+
+
+
+}
+else if(interaction.values[0] == "utility"){
+      
+    
+return interaction.update({embeds : [utility]})
+ 
+
+
+
+}else if(interaction.values[0] == "admin"){
+      
+    
+return interaction.update({embeds : [admin]})
+ 
+
+
+
+
+}
+
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+  }}
